@@ -2,10 +2,12 @@
   "name": "ts_node_project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/demo.bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon --config \"./util/nodemon.json\"/"
+    "start": "npm install --only=prod && NODE_ENV=production node ./build/start.js",
+    "start-dev": "nodemon --config \"./util/nodemon.json\"/",
+    "build": "sh ./util/buildForProd.sh"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +18,7 @@
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
-  },
+  },  
   "dependencies": {
     "@overnightjs/core": "^1.6.9",
     "@overnightjs/logger": "^1.1.9",
